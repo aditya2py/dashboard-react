@@ -1,9 +1,42 @@
-import React from 'react'
+import { cn } from "lib/utils";
+import React from "react";
+import { Link, NavLink } from "react-router";
+import { sidebarItems } from "~/constants";
 
 const NavItems = () => {
   return (
-    <div>NavItems</div>
-  )
-}
+    <section className="nav-items">
+      <Link to="/" className="link-logo">
+        <img src="/assets/icons/logo.svg" alt="logo" className="size-[30px]" />
+        <h1>Dashboard</h1>
+      </Link>
 
-export default NavItems
+      <div className="container">
+        <nav>
+          {sidebarItems.map(({ id, href, icon, label }) => (
+            <NavLink to={href} key={id}>
+              {({ isActive }: { isActive: boolean }) => (
+                <div
+                  className={cn("group nav-item", {
+                    "bg-primary-100 !text-white": isActive,
+                  })}
+                >
+                  <img
+                    src={icon}
+                    alt={label}
+                    className={`group-hover:brightness-0 group-hover:invert size-0 ${
+                      isActive ? "brightness-0 invert" : "text-dark-200"
+                    }`}
+                  />
+                  {label}
+                </div>
+              )}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </section>
+  );
+};
+
+export default NavItems;
