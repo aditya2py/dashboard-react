@@ -4,6 +4,12 @@ import { Link, NavLink } from "react-router";
 import { sidebarItems } from "~/constants";
 
 const NavItems = () => {
+  const user = {
+    name: "Alex Johnson",
+    email: "alex.johnson@example.com",
+    imageUrl: "/assets/images/david.webp",
+  };
+
   return (
     <section className="nav-items">
       <Link to="/" className="link-logo">
@@ -18,7 +24,7 @@ const NavItems = () => {
               {({ isActive }: { isActive: boolean }) => (
                 <div
                   className={cn("group nav-item", {
-                    "bg-primary-100 !text-white": isActive,
+                    "bg-blue-500 !text-white": isActive,
                   })}
                 >
                   <img
@@ -34,6 +40,26 @@ const NavItems = () => {
             </NavLink>
           ))}
         </nav>
+        <footer className="nav-footer">
+          <img
+            src={user?.imageUrl || "/assets/images/david.webp"}
+            alt={user?.name || "David"}
+          />
+          <article>
+            <h2>{user?.name}</h2>
+            <p>{user?.email}</p>
+          </article>
+          <button
+            className="cursor-pointer"
+            onClick={() => console.log("Log Out")}
+          >
+            <img
+              src="/assets/icons/logout.svg"
+              alt="logout"
+              className="size-6"
+            />
+          </button>
+        </footer>
       </div>
     </section>
   );
