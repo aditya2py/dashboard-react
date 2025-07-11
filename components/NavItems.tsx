@@ -3,7 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import { sidebarItems } from "~/constants";
 
-const NavItems = () => {
+const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
   const user = {
     name: "Alex Johnson",
     email: "alex.johnson@example.com",
@@ -26,6 +26,7 @@ const NavItems = () => {
                   className={cn("group nav-item", {
                     "bg-blue-500 !text-white": isActive,
                   })}
+                  onClick={handleClick}
                 >
                   <img
                     src={icon}

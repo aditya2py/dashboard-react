@@ -30,7 +30,6 @@ const MobileSidebar = () => {
         </button>
       </header>
       <SidebarComponent
-        style={{ borderRadius: "50%" }}
         width={270}
         ref={sidebarRef}
         created={() => sidebarRef.current?.hide()}
@@ -38,7 +37,7 @@ const MobileSidebar = () => {
         showBackdrop={true}
         type="over"
       >
-        <NavItems />
+        <NavItems handleClick={toggleSidebar} />
       </SidebarComponent>
     </div>
   );
