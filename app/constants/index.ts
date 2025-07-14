@@ -1,4 +1,5 @@
 import type { AxisModel } from "@syncfusion/ej2-react-charts";
+import { formatDate } from "lib/utils";
 
 export const sidebarItems = [
   {
@@ -140,3 +141,106 @@ export const RIGHT_CONFETTI = {
   angle: 135,
   origin: { x: 1, y: 1 },
 };
+
+export const user = { name: "Aditya" };
+export const dashboardStats = {
+  totalUsers: 1452,
+  usersJoined: { currentMonth: 194, lastMonth: 209 },
+  totalTrips: 134,
+  tripsCreated: { currentMonth: 9, lastMonth: 7 },
+  userRole: { total: 68, currentMonth: 72, lastMonth: 65 },
+};
+export const allTrips = [
+  {
+    id: 1,
+    name: "Himalayan Escape",
+    imageUrls: ["/assets/images/sample.jpeg"],
+    itinerary: [{ location: "Manali" }],
+    tags: ["Adventure", "Nature"],
+    travelStyle: "Solo",
+    estimatedPrice: "$700",
+  },
+  {
+    id: 2,
+    name: "Desert Dreams",
+    imageUrls: ["/assets/images/sample.jpeg"],
+    itinerary: [{ location: "Jaisalmer" }],
+    tags: ["Cultural", "Heritage"],
+    travelStyle: "Family",
+    estimatedPrice: "$1,200",
+  },
+  {
+    id: 3,
+    name: "Backwater Bliss",
+    imageUrls: ["/assets/images/sample.jpeg"],
+    itinerary: [{ location: "Alleppey" }],
+    tags: ["Relaxation", "Nature"],
+    travelStyle: "Couple",
+    estimatedPrice: "$1,000",
+  },
+  {
+    id: 4,
+    name: "Eastern Rhythms",
+    imageUrls: ["/assets/images/sample.jpeg"],
+    itinerary: [{ location: "Kolkata" }],
+    tags: ["Festivals", "Food"],
+    travelStyle: "Friends",
+    estimatedPrice: "$900",
+  },
+  {
+    id: 5,
+    name: "Spiritual Sojourn",
+    imageUrls: ["/assets/images/sample.jpeg"],
+    itinerary: [{ location: "Varanasi" }],
+    tags: ["Spiritual", "Historical"],
+    travelStyle: "Solo",
+    estimatedPrice: "$800",
+  },
+];
+export const users = [
+  {
+    id: 1,
+    name: "Aarav Mehta",
+    email: "aarav.mehta@example.com",
+    imageUrl: "/assets/images/aarav.webp",
+    dateJoined: formatDate("2025-03-12"),
+    itineraryCreated: 6,
+    status: "user",
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    email: "priya.sharma@example.com",
+    imageUrl: "/assets/images/priya.webp",
+    dateJoined: formatDate("2025-04-05"),
+    itineraryCreated: 11,
+    status: "user",
+  },
+  {
+    id: 3,
+    name: "Rohan Iyer",
+    email: "rohan.iyer@example.com",
+    imageUrl: "/assets/images/rohan.webp",
+    dateJoined: formatDate("2025-02-18"),
+    itineraryCreated: 9,
+    status: "admin",
+  },
+  {
+    id: 4,
+    name: "Sneha Patel",
+    email: "sneha.patel@example.com",
+    imageUrl: "/assets/images/sneha.webp",
+    dateJoined: formatDate("2025-05-10"),
+    itineraryCreated: 3,
+    status: "user",
+  },
+  {
+    id: 5,
+    name: "Vikram Desai",
+    email: "vikram.desai@example.com",
+    imageUrl: "/assets/images/vikram.webp",
+    dateJoined: formatDate("2025-01-28"),
+    itineraryCreated: 12,
+    status: "admin",
+  },
+];
